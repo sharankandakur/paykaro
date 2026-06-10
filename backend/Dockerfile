@@ -1,8 +1,10 @@
 FROM node:18-alpine
+RUN apk add --no-cache openssl
 WORKDIR /app
 COPY package*.json ./
-RUN npm install --production
-COPY . .
+COPY prisma ./prisma/
+RUN npm install
 RUN npx prisma generate
+COPY . .
 EXPOSE 5000
 CMD ["node", "src/index.js"]
