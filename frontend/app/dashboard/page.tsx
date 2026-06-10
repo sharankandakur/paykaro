@@ -16,7 +16,7 @@ export default function Dashboard() {
     if (c) setCompany(JSON.parse(c));
 
     // Fetch employees
-    axios.get('http://localhost:5000/api/employees', {
+    axios.get('http://industrious-elegance-production-09e6.up.railway.app/api/employees', {
       headers: { Authorization: `Bearer ${token}` }
     }).then(res => setEmployees(res.data.employees)).catch(() => {});
   }, []);

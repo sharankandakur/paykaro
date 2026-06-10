@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const api = (token: string) => axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'http://industrious-elegance-production-09e6.up.railway.app/api',
   headers: { Authorization: `Bearer ${token}` }
 });
 
